@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="weee.css">
+    <script src="form.js"></script>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <a href="#"><img src="Rick-And-Morty.png" ></a>
+            </div>
+            <div class="navbar">
+                <div class="navnav"></div>
+                <nav>
+                    <ul>
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#Our-Package">Our Package</a></li>
+                        <li><a href="#Call-Us">Call Us</a></li>
+                    </ul>
+                </nav>
+            </div> 
+        </div>
+    </header>
+    <div class="text-atas">
+        <h1>20 Minutes of Adventure Travel</h1>
+        <p>Wubba Lubba Dub Dub!</p>
+    </div>
+    <section id="Home">
+    <div class="container">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="1.png" style="width:100%">
+                <div class="text">"The universe is basically an animal. It grazes on the ordinary. It creates infinite idiots just to eat them."</div>
+                <div class="person">
+                    <img class="person-avatar" src="img1.avif">
+                    <div class="person-info">
+                        <h3 class="person-name"> Morty the traveler </h3>
+                        <p class="person-desc"> Student </p>
+                    </div>
+                </div>
+            </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="2.png" style="width:100%">
+            <div class="text">"Weddings are basically funerals with cake. If I wanted to watch someone throw their life away, I'd hang out with Jerry all day."</div>
+            <div class="person">
+                <img class="person-avatar" src="img2.avif" alt="">
+                <div class="person-info">
+                    <h3 class="person-name"> Morty the boomer </h3>
+                    <p class="person-desc"> Founder at mak crit my adventure </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="3.png" style="width:100%">
+            <div class="text">"Wubba Lubba Dub Dub!"</div>
+            <div class="person">
+                <img class="person-avatar" src="img3.avif" alt="">
+                <div class="person-info">
+                    <h3 class="person-name"> Morty the dub Dub </h3>
+                    <p class="person-desc"> the yatim </p>
+                </div>
+            </div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+    <br>
+    <div class="item item-2">
+        <form name="Form" onsubmit="return validateForm()" >
+            <h2 class="tittle">Registration Form</h2>
+            <div class="box">
+                <label class="form">Full Name</label>
+                <input type="text" name="name" id="name" placeholder="First and last name">
+                <div class="error" id="nameErr"></div>
+            </div>
+            <div class="box">
+                <label class="form">Email Address</label>
+                <input type="text" name="email" id="email" placeholder="example@email.com">
+                <div class="error" id="emailErr"></div>
+            </div>
+            <div class="box">
+                <label class="form"> Interest</label>
+                <select name="interest" id="interest">
+                    <option>Pilih salah satu</option>
+                    <option>Healing</option>
+                    <option>Pacu Adrenalin</option>
+                    <option>Mancing</option>
+                </select> 
+                <div class="error" id="interestErr"></div>
+            </div>       
+            <div class="box">
+                <input type="submit" value="Submit">
+            </div>
+        </form> 
+    </div>    
+</div>
+</section> 
+<section id="Our-Package">
+<div class="container">
+    <span class="about-information">Use this space to provide users with more information about your offer. Consider it a follow-up to your headline and explain the benerfits of your service or product</span>
+</div>
+    <div class="container">    
+    <ol class="list">
+        <li class="list-item-one">
+            <span class="list1">Your first feature, written in the form of benerift statement</span>
+        </li>
+        <li class="list-item-two">
+            <span class="list1">Your second feature, written in the form of benerift statement</span>
+        </li>
+        <li class="list-item-three">
+            <span class="list1">Your third feature, written in the form of benerift statement</span>
+        </li>
+    </ol>
+</div>
+</section>
+<section id="Call-Us">
+    <div class="container"> 
+        <div class="call">
+            <p> PURA PURANYA INI CONTACT</p>
+            <!-- <img src="portal.png"> -->
+        </div>
+    </div>
+</section>
+
+<script>
+var slideIndex = 1;
+    showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 5000); // Change image every 2 seconds
+    }
+</script>
+
+<script>
+    function printError(Id, Msg) {
+        document.getElementById(Id).innerHTML = Msg;
+    }
+      
+    function validateForm() {
+      
+    var name = document.Form.name.value;
+    var email = document.Form.email.value;
+       
+    var interest = document.Form.interest.value;
+        
+      
+    var nameErr = emailErr = mobileErr = interestErr = genderErr = true;
+        
+      
+        if(name == "") {
+            printError("nameErr", "Please enter your name");
+            var elem = document.getElementById("name");
+                elem.classList.add("input-2");
+                elem.classList.remove("input-1");
+        } else {
+            var regex = /^[a-zA-Z\s]+$/;                
+            if(regex.test(name) === false) {
+                printError("nameErr", "Please enter a valid name");
+                var elem = document.getElementById("name");
+                elem.classList.add("input-2");
+                elem.classList.remove("input-1");
+            } else {
+                printError("nameErr", "");
+                nameErr = false;
+                var elem = document.getElementById("name");
+                elem.classList.add("input-1");
+                elem.classList.remove("input-2");
+      
+                
+            }
+        }
+        
+      
+        if(email == "") {
+            printError("emailErr", "Please enter your email address");
+             var elem = document.getElementById("email");
+                elem.classList.add("input-2");
+                elem.classList.remove("input-1");
+        } else {
+            
+            var regex = /^\S+@\S+\.\S+$/;
+            if(regex.test(email) === false) {
+                printError("emailErr", "Please enter a valid email address");
+                var elem = document.getElementById("email");
+                elem.classList.add("input-2");
+                elem.classList.remove("input-1");
+            } else{
+                printError("emailErr", "");
+                emailErr = false;
+                 var elem = document.getElementById("email");
+                elem.classList.add("input-1");
+                elem.classList.remove("input-2");
+      
+            }
+        }
+        
+        
+      
+        if(interest == "Select") {
+            printError("interestErr", "Please select your interest");
+            var elem = document.getElementById("interest");
+                elem.classList.add("input-4");
+                elem.classList.remove("input-3");
+        } else {
+            printError("interestErr", "");
+            interestErr = false;
+            var elem = document.getElementById("interest");
+                elem.classList.add("input-3");
+                elem.classList.remove("input-4");
+        }
+        
+        
+        
+        if((nameErr || emailErr || mobileErr || interestErr || genderErr) == true) {
+           return false;
+        } 
+      };
+</script>
+
+
+</body>
+</html>
